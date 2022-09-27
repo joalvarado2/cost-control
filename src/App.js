@@ -11,7 +11,7 @@ function App() {
 
   const handleNuevoGasto = () => {
     setModal(true);
-  }
+  };
 
   return (
     <div className="App">
@@ -24,10 +24,14 @@ function App() {
 
       {isValidPresupuesto && (
         <div className="nuevo-gasto">
-          <img src={IconoNuevoGasto} alt="icono nuevo gasto" onClick={handleNuevoGasto}/>
+          <img
+            src={IconoNuevoGasto}
+            alt="icono nuevo gasto"
+            onClick={handleNuevoGasto}
+          />
         </div>
       )}
-      {modal && <Modal setModal={setModal}/>}
+      {modal && <Modal setModal={setModal} />}
     </div>
   );
 }
