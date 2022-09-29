@@ -1,19 +1,46 @@
-import React from 'react'
+import React from "react";
+import { formateraFecha } from "../helpers";
+import IconoAhorro from "../img/icono_ahorro.svg";
+import IconoCasa from "../img/icono_casa.svg";
+import IconoComida from "../img/icono_comida.svg";
+import IconoGastos from "../img/icono_gastos.svg";
+import IconoOcio from "../img/icono_ocio.svg";
+import IconoSalud from "../img/icono_salud.svg";
+import IconoSuscripciones from "../img/icono_suscripciones.svg";
 
-const Gasto = ({gasto}) => {
+const diccionariosIconos = {
+  ahorro: IconoAhorro,
+  comida: IconoComida,
+  casa: IconoCasa,
+  gastos: IconoGastos,
+  ocio: IconoOcio,
+  salud: IconoSalud,
+  suscripciones: IconoSuscripciones,
+};
 
-    const {nombre , cantidad} = gasto
-    
+const Gasto = ({ gasto }) => {
+  const { categoria, nombre, cantidad, id, fecha } = gasto;
+
   return (
-    <div className='gasto sombra'>
-        <div className='contenido-gasto'>
-            <div className='descripcion-gasto'>
-                <p className='categoria'>{cantidad}</p>
-                <p className='nombre-gasto'>{nombre}</p>
-            </div>
-        </div>
-    </div>
-  )
-}
+    <div className="gasto sombra">
+      <div className="contenido-gasto">
+        <img
+          src={diccionariosIconos[categoria]}
+          alt="icono gasto"
+        />
 
-export default Gasto
+        <div className="descripcion-gasto">
+          <p className="categoria">{categoria}</p>
+          <p className="nombre-gasto">{nombre}</p>
+          <p className="">
+            Agregado el: {""}
+            <span>{formateraFecha(fecha)}</span>
+          </p>
+        </div>
+      </div>
+      <p className="cantidad-gasto">${cantidad}</p>
+    </div>
+  );
+};
+
+export default Gasto;

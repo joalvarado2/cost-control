@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={modal && "fijar"}>
       <Header
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
@@ -42,18 +42,16 @@ function App() {
 
       {isValidPresupuesto && (
         <>
-        <main>
-          <ListadoGastos
-            gastos={gastos}
-          />
-        </main>
-        <div className="nuevo-gasto">
-          <img
-            src={IconoNuevoGasto}
-            alt="icono nuevo gasto"
-            onClick={handleNuevoGasto}
-          />
-        </div>
+          <main>
+            <ListadoGastos gastos={gastos} />
+          </main>
+          <div className="nuevo-gasto">
+            <img
+              src={IconoNuevoGasto}
+              alt="icono nuevo gasto"
+              onClick={handleNuevoGasto}
+            />
+          </div>
         </>
       )}
       {modal && (
