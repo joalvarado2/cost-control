@@ -28,7 +28,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
       return;
     }
 
-    guardarGasto([nombre, cantidad, categoria])
+    guardarGasto({nombre, cantidad, categoria})
 
   };
 
@@ -78,13 +78,13 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
             onChange={(e) => setCategoria(e.target.value)}
           >
             <option value="">--Seleccione--</option>
-            <option value="ahorro">Ahorro</option>
-            <option value="comida">Comida</option>
-            <option value="casa">Casa</option>
-            <option value="gastos">Gastos Varios</option>
-            <option value="ocio">Ocio</option>
-            <option value="salud">Salud</option>
-            <option value="suscripciones">Suscripciones</option>
+            <option value="AHORRO">Ahorro</option>
+            <option value="COMIDA">Comida</option>
+            <option value="CASA">Casa</option>
+            <option value="GASTOS">Gastos Varios</option>
+            <option value="OCIO">Ocio</option>
+            <option value="SALUS">Salud</option>
+            <option value="SUSCRIPCIONES">Suscripciones</option>
           </select>
         </div>
 
