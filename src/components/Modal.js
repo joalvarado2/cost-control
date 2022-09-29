@@ -27,7 +27,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
       }, 2000);
       return;
     }
-
+    /*state que guarda el objeto con los palametros seleccionados del el formulario */
     guardarGasto({nombre, cantidad, categoria})
 
   };
