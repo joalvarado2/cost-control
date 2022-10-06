@@ -1,5 +1,5 @@
 import React from "react";
-import {
+import {  // dependencia para aplicar el efecto de deslizar hacia los costados
   LeadingActions,
   SwipeableList,
   SwipeableListItem,
@@ -26,7 +26,7 @@ const diccionariosIconos = {
   suscripciones: IconoSuscripciones,
 };
 
-const Gasto = ({ gasto, setGastoEditar}) => {
+const Gasto = ({ gasto, setGastoEditar, eliminarGasto}) => {
   const { categoria, nombre, cantidad, id, fecha } = gasto;
 
   const leadingActions = () => (
@@ -38,7 +38,10 @@ const Gasto = ({ gasto, setGastoEditar}) => {
   )
   const trailingActions = () => (
     <TrailingActions>
-      <SwipeAction onClick={()=> console.log('eliminar...')}>
+      <SwipeAction 
+        onClick={()=> eliminarGasto(id)}
+        destructive={true}
+        >
         Eliminar
       </SwipeAction>
     </TrailingActions>
